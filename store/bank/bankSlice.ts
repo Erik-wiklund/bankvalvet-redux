@@ -1,15 +1,15 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ThunkApi } from "../store";
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ThunkApi } from '../store';
 
 export const deposit = createAsyncThunk<number, number, ThunkApi>(
     'bank/deposit',
     async (amount, { dispatch, getState, rejectWithValue }) => {
-        // trigga andra actions om du vill med distpach
-        // Läs ut data ifrån dit state med getState
-        // prata med api - await fetch()...
-        // Hantera fel med throw eller rejectWithValue
-        // Det måste returneras för att det ska fungera
-        // return rejectWithValue('No can do!');
+    // trigga andra actions om du vill med distpach
+    // Läs ut data ifrån dit state med getState
+    // prata med api - await fetch()...
+    // Hantera fel med throw eller rejectWithValue
+    // Det måste returneras för att det ska fungera
+    // return rejectWithValue('No can do!');
         return amount;
     }
 );
@@ -24,7 +24,7 @@ interface BankState {
 const initialState: BankState = {
     balance: 0,
     transactions: [],
-    isLoading: false,
+    isLoading: false
 };
 
 const bankSlice = createSlice({
@@ -37,7 +37,7 @@ const bankSlice = createSlice({
         }
     },
     extraReducers: builder => {
-        /* DEPOSIT */
+    /* DEPOSIT */
         builder.addCase(deposit.fulfilled, (state, { payload }) => {
             state.balance += payload;
             state.transactions.push(payload);
@@ -47,12 +47,12 @@ const bankSlice = createSlice({
             state.isLoading = true;
             state.errorMessage = undefined;
         });
-        builder.addCase(deposit.rejected, (state, action) => {           
+        builder.addCase(deposit.rejected, (state, action) => {
             state.isLoading = false;
             state.errorMessage = action.payload;
         });
 
-        /* WITHDRAWAL */
+    /* WITHDRAWAL */
     }
 });
 

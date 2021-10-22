@@ -6,12 +6,12 @@ import RootNavigator from './navigation/RootNavigator';
 import store from './store/store';
 
 export default function App() {
-  return (
-    <ReduxProvider store={store}>
-      <SafeAreaProvider>
-        <StatusBar style="auto" />
-        <RootNavigator />
-      </SafeAreaProvider>
-    </ReduxProvider>
-  );
+    return (
+        <ReduxProvider store={store}>
+            <SafeAreaProvider>
+                <StatusBar style="auto" />
+                <RootNavigator />
+            </SafeAreaProvider>
+        </ReduxProvider>
+    );
 }

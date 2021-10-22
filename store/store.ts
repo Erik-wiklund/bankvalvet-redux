@@ -1,11 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
-import bankReducer from "./bank/bankSlice";
-
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
+import bankReducer from './bank/bankSlice';
 
 const store = configureStore({
     reducer: {
-       bank: bankReducer 
+        bank: bankReducer
     }
 });
 

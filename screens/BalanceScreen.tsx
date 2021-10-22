@@ -1,6 +1,6 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { useAppSelector } from "../store/store";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { useAppSelector } from '../store/store';
 
 function BalanceScreen() {
     const balance = useAppSelector(state => state.bank.balance);
@@ -12,7 +12,7 @@ function BalanceScreen() {
             <Text>Transactions: </Text>
             {transcations.map((t, i) => <Text key={i}>{t}</Text>)}
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     }
-})
+});
 
 export default BalanceScreen;
