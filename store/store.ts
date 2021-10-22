@@ -6,7 +6,7 @@ const store = configureStore({
     reducer: {
         bank: bankReducer
     }
-});
+})
 
 /* Derive types from our store */
 export type RootState = ReturnType<typeof store.getState>;
